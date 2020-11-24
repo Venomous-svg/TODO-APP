@@ -1,0 +1,108 @@
+{% load static %}
+<style>
+	p{
+		background-color: black;
+	}
+	body{
+		background-color: #19665e;
+	}
+	input{
+		color:black;
+		padding: 2px 8px;
+		background-color: rgb(233, 150, 150);
+		margin: 8px 0;
+		
+	}
+	.submit{
+		background-color: red;
+
+	}
+
+	  
+	  ol li {
+		background: rgb(3, 40, 58);
+		padding: 5px;
+		margin-left: 35px;
+	  }
+	  
+	  ul li {
+		background: #193452;
+		margin: 5px;
+	  }
+</style>
+<!DOCTYPE html>
+
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>ToDo App</title>
+
+		
+	</head>
+	<body>
+
+		<div class="container" id="wrapper">
+			
+			<div class="row">
+				<div class="col-lg-4 col-lg-offset-4" id="content">
+					<h2 >WHAT DO YOU WANT TO DO TODAY?</h2>
+					
+					<form action="submit" class ="form-horizontal" method="POST" role="form">
+                        {% csrf_token%}
+					
+						
+                                <a class="btn btn-info btn-block" href="{%url 'todo-create'%}">Add items</a>
+								
+							  </span>
+							</div>
+					</form>
+			            </div>
+				
+
+					
+
+					<ul class="list-group t20">
+                        {% for items in items %}
+                        <li  class="list-group-item active">
+							<h3>{{items.TEXT}}</h3>
+							<form action="todo/{{items.id}}/" method="POST" role="form">
+								{% csrf_token%}
+								<a class="btn btn-warning" href="{% url  'todo-update' items.id %}">Update</a>
+								<input type="submit" value="Delete"/>
+								
+							</form>
+							
+							
+							
+						</li>
+                        {% endfor%}
+						
+					</ul>
+				</div>
+			</div>
+
+			<footer>
+				<div class="row pad">
+					<div class="col-lg-12 text-center">
+						Copyright &copy; 2017 <strong>ToDo App</strong>
+						<br>
+						
+						
+					</div>
+				</div>
+			</footer>
+		</div>
+
+		<!-- jQuery -->
+		<script src="{% static './bs/js/jquery.min.js' %}"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="./bs/js/bootstrap.min.js"></script>
+	</body>
+</html>

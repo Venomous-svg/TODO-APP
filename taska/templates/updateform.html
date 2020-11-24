@@ -1,0 +1,57 @@
+<style>
+    h1{
+        color: rgb(194, 61, 123);
+        width: auto;
+        padding: 4%;
+    }
+    .city {
+        background-color: tomato;
+        color: white;
+        padding: 10px;
+      }
+    body{
+        color: rgb(84, 84, 214);
+        background-color: rgb(4, 4, 180);
+    }
+    div{
+        margin: 3px;
+        padding: 1%;
+        
+    }
+</style>
+<!DOCTYPE html>
+
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ToDo App</title>
+
+<head>
+    <h1 class=".city"> Update item</h1>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ToDo App</title>
+
+</head>
+<body>
+    <div>
+        
+        <form method='POST' and action="">
+            {% csrf_token %}
+            {{forms}}
+            <input type="submit" value="update">
+        </form>
+        
+    </div>
+</body>
